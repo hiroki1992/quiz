@@ -8,7 +8,7 @@ angular.module('starter')
             
         }
         $scope.gameStart = function () {
-            location.href = "/#/game";
+            location.href = "#/game";
             console.log('ccc');
         }
 
@@ -17,9 +17,9 @@ angular.module('starter')
 
   
 
-    .controller('resultCtrl', function ($scope) {
+    .controller('resultCtrl', function ($scope,$location) {
         $scope.resultback = function () {
-            location.href = "/#/";
+            location.href = "/";
         }
 
         

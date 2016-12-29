@@ -6,11 +6,11 @@ angular.module('starter')
 $scope.aaa = "gtdd";
 
         $scope.backTop = function () {
-            location.href = "/#/";
+            location.href = "#/";
         }
         
         $scope.resultTop = function () {
-            location.href = "/#/result";
+            location.href = "#/result";
         }
 
         var me = $scope;//thisをmeに退避
@@ -34,20 +34,21 @@ $scope.aaa = "gtdd";
             answerNum = Math.floor(Math.random() * (qLength + 1));//答えの番号(ランダム)
             currentQ.choices.splice(answerNum, 0, currentQ.answer);//選択肢に答えを混ぜる
             me.items.currentQ = currentQ;//現在のクイズをデータバインド用オブジェクトに代入
-            console.log(me.items);
-
+        
         };
 
-/*
+
         //解答ボタンが押されたら
         me.getAnswer = function (ind) {
+            
             var flag = answerNum == ind;//正解か間違いか判定
             var flagText = "間違い";
             if (flag) {//正解だったら
                 rightNum++;//正解数を増やす
                 flagText = "正解";
             }
-            ons.notification.alert({//解答をアラート表示
+           
+          ons.notification.alert({//解答をアラート表示
                 message: '正解は『' + me.items.currentQ.choices[answerNum] + '』です',
                 title: flagText,
                 buttonLabel: 'NEXT',
@@ -60,9 +61,11 @@ $scope.aaa = "gtdd";
                         $scope.$apply(questionInit);//次のクイズ用意
                     }
                 }
+                
+                
             });
+            
         };
-        */
         init();
 
     })

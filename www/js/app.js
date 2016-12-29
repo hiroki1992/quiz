@@ -34,18 +34,18 @@ angular.module('starter', ['ionic'])
 
       .state('game', {
         url: '/game',
-       controller: 'gameCtrl',
+        controller: 'gameCtrl',
         templateUrl: 'views/game.html'
       })
 
       .state('back', {
         url: '/',
-         controller: 'gameCtrl', 
+        controller: 'gameCtrl',
         templateUrl: 'views/top.html'
       })
-.state('result', {
-        url: '/result',
-         controller: 'resultCtrl',
+      .state('result', {
+        url: 'result',
+        controller: 'resultCtrl',
         templateUrl: 'views/result.html'
       })
     $urlRouterProvider.otherwise('/');

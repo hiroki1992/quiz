@@ -21,10 +21,7 @@
 .start-btn{
     padding: 0 20px;
 }
-.choices .choice{
-    width: 90%;
-    margin: 40px auto 0 auto;
-}
+
 .result{
     min-height: 370px;
 }
@@ -43,4 +40,23 @@
 .score span{
     color: #FC3;
     font-size: 60px;
+}
+.right{
+    line-height: 40px;
+}
+.question{
+    padding: 10px 20px;
+    min-height: 240px;
+    background-color: #EEE;
+}
+.question p{
+    font-size: 24px;
+}
+.choices .choice{
+    width: 90%;
+    margin: 40px auto 0 auto;
+}
+.row{
+flex-wrap: wrap;
+
 }
