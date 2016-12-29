@@ -1,0 +1,40 @@
+<div class="bar bar-header bar-positive">
+
+	<button ng-click="backTop()" class="button button-positive ">
+					戻る
+				</button>
+
+
+	<p class="title">
+		Quiz App
+	</p>
+
+	<p class="buttons">
+		{{items.currentNum + 1}} / {{items.totalNum}}問目
+	</p>
+
+</div>
+
+<ion-content>
+	
+	<div class="question">
+		<div align="right">
+			<p>
+				{{items.currentQ.text}}
+			</p>
+		</div>
+	</div>
+
+	<div class="choices">
+		<div class="row">
+			<div class="col"   align="center" ng-repeat="choice in items.currentQ.choices track by $index">
+
+				<div class="choice">
+					<button class="button" ng-click="getAnswer($index)" >							  
+							  {{choice}}
+        		  		</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</ion-content>

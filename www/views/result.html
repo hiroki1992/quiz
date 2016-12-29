@@ -1,0 +1,16 @@
+<div ng-controller="resultCtrl">
+        <ons-toolbar>
+        	<div class="center">
+        		結果発表
+	    	</div>
+		</ons-toolbar>
+	    <div class="result">
+            <p class="detail">{{result.items.totalNum}} 問中 {{result.items.rightNum}} 問正解</p>
+	    	<p class="score"><span>{{result.items.score}}</span> point</p>
+        </div>
+        <div class="back-btn">
+            <button ng-click="resultback()">
+              トップへ戻る
+            </button>
+        </div>
+    </div>
