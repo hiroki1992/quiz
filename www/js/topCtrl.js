@@ -17,14 +17,6 @@ angular.module('starter')
 
   
 
-    .controller('resultCtrl', function ($scope,$location) {
-        $scope.resultback = function () {
-            location.href = "/";
-        }
-
-        
-    })
-
    
 
    

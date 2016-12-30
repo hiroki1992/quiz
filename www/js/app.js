@@ -44,7 +44,7 @@ angular.module('starter', ['ionic'])
         templateUrl: 'views/top.html'
       })
       .state('result', {
-        url: 'result',
+        url: '/result',
         controller: 'resultCtrl',
         templateUrl: 'views/result.html'
       })
