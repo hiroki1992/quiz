@@ -12,7 +12,7 @@ angular.module('starter')
             "answer": "Chrome",
             "choices": ["FireFox","Opera","Safari"]
           },
-          {
+          /*{
             "text": "HTTPステータスコードで503の意味は？",
             "answer": "サーバー過負荷",
             "choices": ["NotFound","認証エラー","アクセス禁止"]
@@ -26,6 +26,6 @@ angular.module('starter')
             "text": "HTMLのHはどんな意味？",
             "answer": "Hyper",
             "choices": ["Hip","Handshake","History"]
-          }
+          }*/
         ]
 })

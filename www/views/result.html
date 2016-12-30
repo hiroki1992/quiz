@@ -1,18 +1,17 @@
-<div ng-controller="resultCtrl">
-        <ons-toolbar>
-        	<div class="center">
-        		結果発表
-	    	</div>
-		</ons-toolbar>
-	    <div class="result">
-            <p class="detail">{{result.items.totalNum}} 問中 {{result.items.rightNum}} 問正解</p>
-	    	<p class="score"><span>{{result.items.score}}</span> point</p>
-        </div>
+<div class="bar bar-header bar-positive">
+    <div class="title">
+        結果発表
+    </div>
+</div>
+<ion-content>
+    <div class="result">
+        <p class="detail">{{items.totalNum}} 問中 {{items.rightNum}} 問正解</p>
+        <p class="score"><span>{{resultscore}}</span> point</p>
+    </div>
 
-        <p>結果{{gameValue}}<p>
-        <div class="back-btn">
-            <button ng-click="resultback()">
+    <div class="" align="center">
+        <button ng-click="resultback()">
               トップへ戻る
             </button>
-        </div>
     </div>
+</ion-content>

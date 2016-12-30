@@ -1,6 +1,6 @@
 angular.module('starter')
 
-    .controller('topCtrl', function ($scope) {
+    .controller('topCtrl', function ($scope,$location) {
       
         $scope.product = { name: 'Azurite', price: 2.95 };
         $scope.aaa = "ffff";
@@ -8,8 +8,9 @@ angular.module('starter')
             
         }
         $scope.gameStart = function () {
-            location.href = "#/game";
-            console.log('ccc');
+            $location.path("/game");
+    
+            
         }
 
 

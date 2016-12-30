@@ -1,20 +1,17 @@
 angular.module('starter')
 
-
- .controller('resultCtrl', function ($scope,$location,$rootScope) {
+    .controller('resultCtrl', function ($scope, $location, $rootScope) {
         $scope.resultback = function () {
             location.href = "/";
         }
 
-  $scope.gameValue = $rootScope.hoge;
+        $scope.items = $rootScope.result;
 
-  console.log($scope.gameValue);
-    /* var rate = 100;
-    this.items = myNavigator.getCurrentPage().options;
-    this.items.score = this.items.rightNum * rate;
-    this.backTop = function(){
-    		myNavigator.pushPage('top.html', { animation: "none" });
-    };*/
-
-
+ 
+    var rate = 100;
+    
+ console.log($scope.items.rightNum);
+this.score =  $scope.items.rightNum;
+    var resultscore   = this.score * rate;
+    console.log(resultscore);
 })

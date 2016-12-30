@@ -6,11 +6,11 @@ angular.module('starter')
         $scope.aaa = "gtdd";
 
         $scope.backTop = function () {
-            location.href = "#/";
+            $location.path("#/");
         }
 
         $scope.resultTop = function () {
-            location.href = "#/result";
+            $location.path("/result");
         }
 
         var me = $scope;//thisをmeに退避
@@ -48,23 +48,7 @@ angular.module('starter')
                 flagText = "正解";
             }
 
-            /*$scope.showAlert({//解答をアラート表示
-                  message: '正解は『' + me.items.currentQ.choices[answerNum] + '』です',
-                  title: flagText,
-                  buttonLabel: 'NEXT',
-                  animation: 'default',
-                  callback: function () {// NEXTがクリックされたら
-                      if (me.items.currentNum >= me.items.totalNum - 1) {//全問終了したら
-                          myNavigator.pushPage('result.html', { totalNum: me.items.totalNum, rightNum: rightNum });
-                      } else {//まだクイズが残っていれば
-                          me.items.currentNum++;
-                          $scope.$apply(questionInit);//次のクイズ用意
-                      }
-                  }
-                  
-                  
-              });
-              */
+            
             var myPopup = $ionicPopup.show({
                 template: '正解は『' + me.items.currentQ.choices[answerNum] + '』です',
                 title: flagText,
@@ -76,15 +60,10 @@ angular.module('starter')
                         type: 'button-positive',
                         onTap: function (e) {
                             if (me.items.currentNum >= me.items.totalNum - 1) {//全問終了したら
-                                // $scope.items.totalNum = me.items.totalNum;
-                                // $scope.items.rightNum = rightNum;
-                                //console.log(me.items.totalNum,rightNum);
-                                // Globals.hoge = 'hoge : ' + new Date().getTime();
+                                $rootScope.result = { totalNum: me.items.totalNum, rightNum: rightNum };
+                               $location.path('/result');
                                 
-                                $rootScope.hoge = {totalNum: me.items.totalNum,rightNum: rightNum} ;
-                               
-                               $location.path('#/result/');  
-                                  location.href = "#/result";
+                                
                                 
                             } else {//まだクイズが残っていれば
                                 me.items.currentNum++;
