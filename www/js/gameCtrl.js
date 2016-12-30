@@ -1,9 +1,9 @@
 angular.module('starter')
 
 
-    .controller('gameCtrl', function ($scope, questionsService,$ionicPopup, $timeout,$location,$rootScope) {
+    .controller('gameCtrl', function ($scope, $ionicPopup, $timeout, $location, $rootScope, $http) {
 
-        
+
         $scope.backTop = function () {
             $location.path("#/");
         }
@@ -18,11 +18,31 @@ angular.module('starter')
         var anserNum = null;//正解番号
         var questions = null;//クイズデータ
 
+        var get_questions = function () {
+            var res ={};
+            var aaa;
+            url = 'http://dev.krsg.tech/academic_study/question/get';
+            $http.post(url).then(function(res) {
+                //console.log(JSON.parse(res));
+                aaa = JSON.parse(res);
+                console.log(aaa);
+                return false;
+            });
+
+
+
+            return aaa;
+
+        }
+
+get_questions();
+
         var init = function () {
             me.items.currentNum = 0;//現在のクイズ番号(1問目)
-            questions = JSON.parse(JSON.stringify(questionsService.questions));//クイズデータをサービスより取得&ディープコピー
+            // console.log(get_questions());
+            // questions = JSON.parse(JSON.stringify(get_questions()));//クイズデータをサービスより取得&ディープコピー
+            //questions = JSON.parse(get_questions());//クイズデータをサービスより取得&ディープコピー
             me.items.totalNum = questions.length;//取得したクイズデータの全クイズ数
-
             questionInit();
         }
 
@@ -47,7 +67,7 @@ angular.module('starter')
                 flagText = "正解";
             }
 
-            
+
             var myPopup = $ionicPopup.show({
                 template: '正解は『' + me.items.currentQ.choices[answerNum] + '』です',
                 title: flagText,
@@ -60,18 +80,18 @@ angular.module('starter')
                         onTap: function (e) {
                             if (me.items.currentNum >= me.items.totalNum - 1) {//全問終了したら
                                 $rootScope.result = { totalNum: me.items.totalNum, rightNum: rightNum };
-                               $location.path('/result');
-                                
-                                
-                                
+                                $location.path('/result');
+
+
+
                             } else {//まだクイズが残っていれば
                                 me.items.currentNum++;
-                                
+
                                 // これかかないと$scope.$applyでエラー
                                 $timeout(function () {
                                     $scope.$apply(questionInit);//次のクイズ用意
                                 });
-                             }
+                            }
                         }
                     }
                 ]
@@ -79,5 +99,4 @@ angular.module('starter')
 
         };
         init();
-
     })
