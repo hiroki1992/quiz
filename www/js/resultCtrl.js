@@ -12,6 +12,6 @@ angular.module('starter')
     
  console.log($scope.items.rightNum);
 this.score =  $scope.items.rightNum;
-    var resultscore   = this.score * rate;
-    console.log(resultscore);
+    $scope.resultscore   = this.score * rate;
+    
 })
