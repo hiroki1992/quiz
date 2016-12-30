@@ -3,8 +3,7 @@ angular.module('starter')
 
     .controller('gameCtrl', function ($scope, questionsService,$ionicPopup, $timeout,$location,$rootScope) {
 
-        $scope.aaa = "gtdd";
-
+        
         $scope.backTop = function () {
             $location.path("#/");
         }
@@ -67,7 +66,7 @@ angular.module('starter')
                                 
                             } else {//まだクイズが残っていれば
                                 me.items.currentNum++;
-                                console.log(me.items.currentNum);
+                                
                                 // これかかないと$scope.$applyでエラー
                                 $timeout(function () {
                                     $scope.$apply(questionInit);//次のクイズ用意

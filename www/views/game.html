@@ -4,7 +4,6 @@
 					戻る
 				</button>
 
-
 	<p class="title">
 		Quiz App
 	</p>
@@ -16,22 +15,22 @@
 </div>
 
 <ion-content>
-	
+
 	<div class="question">
-		
-			<p>
-				{{items.currentQ.text}}
-			</p>
+
+		<p>
+			{{items.currentQ.text}}
+		</p>
 	</div>
-		<div class="choices">
+	<div class="choices">
 		<div class="row">
 			<div class="col col-50" align="center" ng-repeat="choice in items.currentQ.choices track by $index">
-	<div class="choice">
-				
-					<button class="button button-full button-calm" ng-click="getAnswer($index)" >							  
+				<div class="choice">
+
+					<button class="button button-full button-calm" ng-click="getAnswer($index)">							  
 							  {{choice}}
         		  		</button>
-			</div>	
+				</div>
 			</div>
 		</div>
 	</div>
