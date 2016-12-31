@@ -18,31 +18,31 @@ angular.module('starter')
         var anserNum = null;//正解番号
         var questions = null;//クイズデータ
 
-        var get_questions = function () {
+        var data = function ($scope) {
             var res ={};
-            var aaa;
+             $scope.get_questions = get_questions;
             url = 'http://dev.krsg.tech/academic_study/question/get';
             $http.post(url).then(function(res) {
                 //console.log(JSON.parse(res));
-                aaa = JSON.parse(res);
-                console.log(aaa);
-                return false;
-            });
-
-
-
-            return aaa;
+                $scope.get_questions =angular.fromJson(res);              
+                
+              
+                
+            })
+  
+            return  $scope.get_questions;
 
         }
-
-get_questions();
+console.log($scope.get_questons);
+data();
 
         var init = function () {
             me.items.currentNum = 0;//現在のクイズ番号(1問目)
-            // console.log(get_questions());
+              
             // questions = JSON.parse(JSON.stringify(get_questions()));//クイズデータをサービスより取得&ディープコピー
-            //questions = JSON.parse(get_questions());//クイズデータをサービスより取得&ディープコピー
-            me.items.totalNum = questions.length;//取得したクイズデータの全クイズ数
+        questions =  data;//クイズデータをサービスより取得&ディープコピー
+            console.log(questionsns);
+            // me.items.totalNum = questions.length;//取得したクイズデータの全クイズ数
             questionInit();
         }
 
