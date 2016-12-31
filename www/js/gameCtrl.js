@@ -1,7 +1,7 @@
 angular.module('starter')
 
 
-    .controller('gameCtrl', function ($scope, $ionicPopup, $timeout, $location, $rootScope, $http) {
+    .controller('gameCtrl', function ($scope, $ionicPopup, $timeout, $location, $rootScope, questionsService) {
 
 
         $scope.backTop = function () {
@@ -18,32 +18,17 @@ angular.module('starter')
         var anserNum = null;//正解番号
         var questions = null;//クイズデータ
 
-        var data = function ($scope) {
-            var res ={};
-             $scope.get_questions = get_questions;
-            url = 'http://dev.krsg.tech/academic_study/question/get';
-            $http.post(url).then(function(res) {
-                //console.log(JSON.parse(res));
-                $scope.get_questions =angular.fromJson(res);              
-                
-              
-                
-            })
-  
-            return  $scope.get_questions;
 
-        }
-console.log($scope.get_questons);
-data();
 
         var init = function () {
             me.items.currentNum = 0;//現在のクイズ番号(1問目)
-              
-            // questions = JSON.parse(JSON.stringify(get_questions()));//クイズデータをサービスより取得&ディープコピー
-        questions =  data;//クイズデータをサービスより取得&ディープコピー
-            console.log(questionsns);
-            // me.items.totalNum = questions.length;//取得したクイズデータの全クイズ数
-            questionInit();
+            var p = questionsService.get_questions();
+            p.then(function (question_data) {
+                //console.log(question_data);
+                questions = JSON.parse(JSON.stringify(question_data));//クイズデータをサービスより取得&ディープコピー
+                me.items.totalNum = questions.length;//取得したクイズデータの全クイズ数
+                questionInit();
+            });
         }
 
         //解答選択肢用意
