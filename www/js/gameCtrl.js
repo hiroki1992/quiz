@@ -5,7 +5,7 @@ angular.module('starter')
 
 
         $scope.backTop = function () {
-            $location.path("#/");
+            $location.path("/");
         }
 
         $scope.resultTop = function () {

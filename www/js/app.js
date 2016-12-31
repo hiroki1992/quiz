@@ -33,6 +33,7 @@ angular.module('starter', ['ionic'])
       })
 
       .state('game', {
+        cache: false,
         url: '/game',
         controller: 'gameCtrl',
         templateUrl: 'views/game.html'
@@ -48,7 +49,9 @@ angular.module('starter', ['ionic'])
         controller: 'resultCtrl',
         templateUrl: 'views/result.html'
       })
+
     $urlRouterProvider.otherwise('/');
+
 
   })
 
