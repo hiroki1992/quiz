@@ -18,11 +18,11 @@ angular.module('starter')
         var anserNum = null;//正解番号
         var questions = null;//クイズデータ
 
-
-
+       
         var init = function () {
             me.items.currentNum = 0;//現在のクイズ番号(1問目)
-            var p = questionsService.get_questions();
+            console.log();
+            var p = questionsService.get_questions(category_id);
             p.then(function (question_data) {
                 //console.log(question_data);
                 questions = JSON.parse(JSON.stringify(question_data));//クイズデータをサービスより取得&ディープコピー

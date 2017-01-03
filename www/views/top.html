@@ -2,6 +2,27 @@
   <h1><span>Quiz App</span></h1>
   <p>ionicで作る簡単なクイズアプリ</p>
 </div>
+
+<div class="list">
+ <label class="item item-input item-select positive">
+   <div class="input-label">
+     カテゴリー選択
+   </div>
+
+   <select ng-model="category_id"
+           ng-options="categories.category_id as categories.category_name  for categories in categories" value="{{category_id}}">
+
+ <option value="">選択してください</option>
+
+   </select>
+
+ </label>
+</div>
+<p>categories.category_id ={{category_id}}</p>
+
+
+<br>
+<br>
 <div class="start-btn" align="center">
   <button ng-click="gameStart()" class="button button-positive button-large">
           Game Start
