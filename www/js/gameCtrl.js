@@ -17,7 +17,7 @@ angular.module('starter')
         var rightNum = 0;//正解数
         var anserNum = null;//正解番号
         var questions = null;//クイズデータ
-
+   var category_id = $rootScope.category_id;
        
         var init = function () {
             me.items.currentNum = 0;//現在のクイズ番号(1問目)

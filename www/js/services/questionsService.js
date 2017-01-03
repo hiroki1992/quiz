@@ -8,7 +8,7 @@ angular.module('starter')
             url = 'http://dev.krsg.tech/academic_study/quiz/get?category_id=' + category_id;
             // console.log(param);
             $http.get(url).then(function (res) {
-                console.log(res.data);
+                // console.log(res.data);
                 d.resolve(res.data);
             })
             return d.promise;

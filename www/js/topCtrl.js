@@ -1,8 +1,10 @@
 angular.module('starter')
 
-    .controller('topCtrl', function ($scope, $location, questionsService) {
+    .controller('topCtrl', function ($scope, $location, questionsService, $rootScope) {
 
-        $scope.gameStart = function () {
+        $scope.gameStart = function (category_id) {
+
+            $rootScope.category_id = category_id;
             $location.path("/game");
         }
 
@@ -10,7 +12,7 @@ angular.module('starter')
         p.then(function (categories) {
             $scope.categories = categories;
             console.log(categories);
-            
+
         });
 
 
