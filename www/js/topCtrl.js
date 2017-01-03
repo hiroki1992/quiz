@@ -11,7 +11,7 @@ angular.module('starter')
         var p = questionsService.get_category();
         p.then(function (categories) {
             $scope.categories = categories;
-            console.log(categories);
+            // console.log(categories);
 
         });
 

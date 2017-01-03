@@ -16,6 +16,20 @@ angular.module('starter', ['ionic'])
         // from snapping when text inputs are focused. Ionic handles this internally for
         // a much nicer keyboard experience.
         cordova.plugins.Keyboard.disableScroll(true);
+
+        if (ionic.Platform.isAndroid()) {
+          admobid = { // for Android
+            banner: 'ca-app-pub-6497851195155110/3431542582',
+          };
+
+          if (AdMob)
+            AdMob.createBanner({
+              adId: admobid.banner,
+              position: AdMob.AD_POSITION.BOTTOM_CENTER,
+              autoShow: true,
+              isTesting: true
+            });
+        }
       }
       if (window.StatusBar) {
         StatusBar.styleDefault();
