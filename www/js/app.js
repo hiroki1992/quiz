@@ -59,6 +59,7 @@ angular.module('starter', ['ionic'])
         templateUrl: 'views/top.html'
       })
       .state('result', {
+        cache: false,
         url: '/result',
         controller: 'resultCtrl',
         templateUrl: 'views/result.html'
