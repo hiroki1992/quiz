@@ -18,10 +18,10 @@ angular.module('starter')
         var anserNum = null;//正解番号
         var questions = null;//クイズデータ
    var category_id = $rootScope.category_id;
-       
+      
         var init = function () {
             me.items.currentNum = 0;//現在のクイズ番号(1問目)
-            console.log();
+            
             var p = questionsService.get_questions(category_id);
             p.then(function (question_data) {
                 //console.log(question_data);

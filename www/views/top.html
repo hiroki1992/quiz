@@ -6,11 +6,11 @@
 <div class="list">
  <label class="item item-input item-select item-stable">
    <div class="input-label">
-     クイズ選択
+     カテゴリー選択
    </div>
 
    <select ng-model="category_id"
-           ng-options="categories.category_id as categories.category_name  for categories in categories" value="{{category_id}}">
+           ng-options="categories.category_id as categories.category_name  for categories in categories"  value="{{category_id}}">
 
  <option value="">選択してください</option>
 
@@ -27,3 +27,4 @@
           Game Start
         </button>
 </div>
+
